@@ -1,4 +1,7 @@
 import re
+from autocorrect import Speller
+from nltk.corpus import stopwords
+
 def remove_html_tags(text):
     pattern = re.compile('<.*?>')
     return pattern.sub(r'', text)
@@ -7,7 +10,6 @@ def remove_url(text):
     pattern = re.compile(r'https?://\S+|www\.\S+')
     return pattern.sub(r'', text)
 
-from nltk.corpus import stopwords
 
 stop_words = set(stopwords.words('english'))
 
@@ -131,8 +133,6 @@ def chat_conversion(text):
         else:
             new_text.append(w)
     return " ".join(new_text)
-
-from autocorrect import Speller
 
 spell = Speller(lang='en')
 

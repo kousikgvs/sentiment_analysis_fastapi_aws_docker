@@ -1,6 +1,6 @@
 import pandas as pd
 import joblib
-from preprocessing import preprocess
+from src.preprocess_dataset.preprocess import preprocess
 
 model = joblib.load("models/sentiment_model.pkl")
 tfidf = joblib.load("models/tfidf_vectorizer.pkl")
