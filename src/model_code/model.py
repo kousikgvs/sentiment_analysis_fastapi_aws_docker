@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
-import os
+import sys , os
 import joblib
 from src.preprocess_dataset.preprocess import preprocess
 from src.features.vectorizer import tfidf
@@ -13,7 +13,11 @@ from src.features.vectorizer import tfidf
 print("Started Sentiment Analysis Training Pipeline...")
 
 print("Loading dataset...")
-df = pd.read_csv("C:\\Users\\kousi\\Documents\\sentiment_analysis_fastapi_aws_docker\\dataset\\IMDB Dataset.csv")
+
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+df = pd.read_csv(os.path.join(BASE_DIR, "dataset", "IMDB Dataset.csv"))
+
 print("Dataset loaded successfully")
 print("Dataset shape:", df.shape)
 
