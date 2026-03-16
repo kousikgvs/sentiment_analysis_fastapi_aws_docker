@@ -1,6 +1,7 @@
 pandas==2.2.2
-scikit-learn==1.5.1
 numpy==1.26.4
+scikit-learn==1.5.1
 nltk==3.9.1
-fastapi
-uvicorn
+emoji==2.12.1
+autocorrect==2.6.1
+joblib==1.4.2
